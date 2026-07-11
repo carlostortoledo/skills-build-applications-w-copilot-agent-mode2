@@ -125,7 +125,7 @@ function ResourcePage({ description, emptyMessage, resourceKey, title, columns }
           </div>
           <div className="text-lg-end">
             <div className="small text-secondary">Endpoint</div>
-            <code className="endpoint-label">/{resourceKey}/</code>
+            <code className="endpoint-label">/api/{resourceKey}/</code>
           </div>
         </div>
 
