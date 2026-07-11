@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 
 import { connectDatabase } from './config/database';
-import { PORT, getPublicApiUrl } from './config/runtime';
+import { HOST, PORT, getPublicApiUrl } from './config/runtime';
 import activitiesRouter from './routes/activities';
 import leaderboardRouter from './routes/leaderboard';
 import teamsRouter from './routes/teams';
@@ -33,7 +33,7 @@ app.get('/api/health', (_req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
   console.log(`Backend API running on port ${PORT}`);
   console.log(`Public API URL: ${getPublicApiUrl()}`);
 });
