@@ -3,9 +3,10 @@ import dotenv from 'dotenv';
 import express from 'express';
 
 import { connectDatabase } from './config/database';
-import { HOST, PORT, getPublicApiUrl } from './config/runtime';
+import { HOST, PORT } from './config/runtime';
 import activitiesRouter from './routes/activities';
 import leaderboardRouter from './routes/leaderboard';
+import { getPublicApiUrl } from './server';
 import teamsRouter from './routes/teams';
 import usersRouter from './routes/users';
 import workoutsRouter from './routes/workouts';
