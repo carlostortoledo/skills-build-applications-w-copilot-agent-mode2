@@ -8,12 +8,14 @@ const columns = [
   { key: 'equipment', label: 'Equipment' },
 ]
 
+const resourceKey = 'workouts'
+
 function Workouts() {
   return (
     <ResourcePage
       title="Workouts"
       description="Suggested training plans and exercise programs available to the app."
-      resourceKey="workouts"
+      resourceKey={resourceKey}
       columns={columns}
       emptyMessage="No workouts are available yet. Seed the backend or create workout templates first."
     />

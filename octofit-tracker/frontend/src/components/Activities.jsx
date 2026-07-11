@@ -8,12 +8,14 @@ const columns = [
   { key: 'notes', label: 'Notes' },
 ]
 
+const resourceKey = 'activities'
+
 function Activities() {
   return (
     <ResourcePage
       title="Activities"
       description="Recent logged workouts and movement sessions across your teams."
-      resourceKey="activities"
+      resourceKey={resourceKey}
       columns={columns}
       emptyMessage="No activities are available yet. Seed the backend or post a new activity."
     />

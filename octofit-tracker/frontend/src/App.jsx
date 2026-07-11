@@ -14,6 +14,12 @@ const navigationItems = [
   { to: '/workouts', label: 'Workouts' },
 ]
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+
+const apiBaseUrl = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api`
+  : 'VITE_CODESPACE_NAME is not set'
+
 function App() {
   return (
     <div className="app-shell bg-body-tertiary min-vh-100">
@@ -33,7 +39,7 @@ function App() {
                 <div className="small text-uppercase text-secondary mb-2">API target</div>
                 <div className="fw-semibold">Codespaces-aware routing via import.meta.env</div>
                 <div className="small text-secondary mt-2">
-                  Define <code>VITE_CODESPACE_NAME</code> to target the public backend URL.
+                  <code>{apiBaseUrl}</code>
                 </div>
               </div>
             </div>
@@ -42,6 +48,13 @@ function App() {
       </header>
 
       <div className="container py-4 py-lg-5">
+        {!codespaceName ? (
+          <div className="alert alert-warning mb-4" role="alert">
+            Define <code>VITE_CODESPACE_NAME</code> in <code>.env.local</code> so API calls use the
+            public Codespaces backend URL.
+          </div>
+        ) : null}
+
         <nav aria-label="Primary" className="mb-4">
           <ul className="nav nav-pills gap-2 app-nav">
             {navigationItems.map((item) => (

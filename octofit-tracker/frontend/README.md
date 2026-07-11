@@ -4,7 +4,7 @@ This presentation tier is a React 19 + Vite app that uses `react-router-dom` to 
 
 ## Environment configuration
 
-Define `VITE_CODESPACE_NAME` before starting the frontend so the app can call the backend through the public Codespaces URL on port 8000.
+You must define `VITE_CODESPACE_NAME` (for example in `.env.local`) before starting the frontend so the app can call the backend through the public Codespaces URL on port 8000.
 
 Example `.env.local`:
 

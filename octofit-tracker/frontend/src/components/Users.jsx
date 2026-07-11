@@ -7,12 +7,14 @@ const columns = [
   { key: 'avatarUrl', label: 'Avatar URL' },
 ]
 
+const resourceKey = 'users'
+
 function Users() {
   return (
     <ResourcePage
       title="Users"
       description="Registered athletes, their emails, and their current team assignments."
-      resourceKey="users"
+      resourceKey={resourceKey}
       columns={columns}
       emptyMessage="No users are available yet. Seed the backend or create records through the API."
     />

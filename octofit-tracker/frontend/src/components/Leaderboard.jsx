@@ -8,12 +8,14 @@ const columns = [
   { key: 'teamId', label: 'Team ID' },
 ]
 
+const resourceKey = 'leaderboard'
+
 function Leaderboard() {
   return (
     <ResourcePage
       title="Leaderboard"
       description="Current standings for competitive challenges and team-based fitness goals."
-      resourceKey="leaderboard"
+      resourceKey={resourceKey}
       columns={columns}
       emptyMessage="No leaderboard entries are available yet. Seed the backend or create scores first."
     />
